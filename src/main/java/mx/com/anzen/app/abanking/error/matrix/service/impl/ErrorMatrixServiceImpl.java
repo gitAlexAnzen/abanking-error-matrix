@@ -31,10 +31,7 @@ public class ErrorMatrixServiceImpl implements ErrorMatrixService {
 	private static final Logger logger = LoggerFactory.getLogger(ErrorMatrixServiceImpl.class);
 
 	@Autowired
-	ErrorMatrixRepository matrixRepository;
-
-	@Autowired
-	Util util;
+	private ErrorMatrixRepository matrixRepository;
 
 	/* 
 	 * @see mx.com.anzen.app.abanking.error.matrix.service.ErrorMarixService#findErrorMatrix(java.lang.String)
@@ -47,7 +44,7 @@ public class ErrorMatrixServiceImpl implements ErrorMatrixService {
 
 		if(errorCode == null || errorCode.isEmpty() ) {
 
-			matrixDto = util.getEmptyValueError(errorCode);
+			matrixDto = Util.getEmptyValueError(errorCode);
 
 		} else {
 
@@ -72,10 +69,8 @@ public class ErrorMatrixServiceImpl implements ErrorMatrixService {
 		logger.info("Validating information of object: ErrorMatrix ");
 		if(errorMatrix == null) {
 			logger.info("No code found  in database: {} ", errorCode);
-			matrixDto = util.createEmptyMessage();
-
+			matrixDto = Util.createEmptyMessage();
 		} else {
-
 			matrixDto.setErrorCode(errorMatrix.getErrorCode());
 			matrixDto.setStatus(errorMatrix.getStatus());
 			matrixDto.setMessage(errorMatrix.getMessage());

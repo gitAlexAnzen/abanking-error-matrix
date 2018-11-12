@@ -20,10 +20,8 @@ import mx.com.anzen.app.abanking.error.matrix.dto.ErrorMatrixDto;
  * @version abanking-error-matrix
  * @since abanking-error-matrix
  */
-@Component
 public class Util {
-	
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(Util.class);
 	
 	/**
@@ -32,7 +30,7 @@ public class Util {
 	 * @param errorCode
 	 * @return
 	 */
-	public ErrorMatrixDto getEmptyValueError(String errorCode) {
+	public static ErrorMatrixDto getEmptyValueError(String errorCode) {
 
 		logger.info("Value code: {} ", errorCode);
 		ErrorMatrixDto matrixDto = new ErrorMatrixDto();		
@@ -48,7 +46,7 @@ public class Util {
 	 * @param obj
 	 * @return
 	 */
-	public ErrorMatrixDto createEmptyMessage() {
+	public static ErrorMatrixDto createEmptyMessage() {
 
 		logger.info("Creating object with empty response of database");
 		ErrorMatrixDto matrixDto = new ErrorMatrixDto();		

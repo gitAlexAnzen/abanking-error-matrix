@@ -1,0 +1,12 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:9.5.7
+      volumes:
+      - ../database/schema:/docker-entrypoint-initdb.d
+      ports:
+      - 5432:5432
+      environment:
+      - POSTGRES_DB=abanking_error_matrix
+      - POSTGRES_USER=abanking_matrix
+      - POSTGRES_PASSWORD=matrix666

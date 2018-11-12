@@ -30,7 +30,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @version abanking-error-matrix
  * @since abanking-error-matrix
  */
-
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
